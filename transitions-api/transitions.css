@@ -1,0 +1,150 @@
+/* shared */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+.standard-content {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  min-height: 400px;
+}
+
+.box {
+  background-color: var(--color-bg, hsl(0, 0%, 95%));
+  border: 1px solid rgba(0 0 0 / 5%);
+  border-radius: 6px;
+  min-width: 300px;
+  overflow: hidden;
+  flex: 1;
+}
+
+/*
+  default blend mode is multiply. Set to normal to avoid effects we don't want.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+@keyframes slideToLeft {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+[data-page="home"]::view-transition-old(root) {
+  animation: slideOutToLeft 0.3s;
+}
+
+[data-page="home"]::view-transition-new(root) {
+  animation: slideToLeft 0.3s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+[data-page="one"]::view-transition-old(root) {
+  animation: slideOutUp 0.3s;
+}
+
+[data-page="one"]::view-transition-new(root) {
+  animation: slideUp 0.3s;
+}
+
+@keyframes slideToRight {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+[data-page="two"]::view-transition-old(root) {
+  animation: slideOutToRight 0.3s;
+}
+
+[data-page="two"]::view-transition-new(root) {
+  animation: slideToRight 0.3s;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
