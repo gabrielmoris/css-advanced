@@ -37,6 +37,7 @@ body {
   flex: 1;
 }
 
+/* View Transitions API */
 /*
   default blend mode is multiply. Set to normal to avoid effects we don't want.
 */
