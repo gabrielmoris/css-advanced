@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+h1 {
+  margin: 2rem 0;
+}
+
+.text-container {
+  width: 500px;
+  padding: 2rem 0;
+}
+
+.text-block {
+  text-align: justify;
+  padding: 2rem 0;
+}
+
+/* Scrolling animation taking Viewport in account! */
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+img {
+  /* I provide a Name and Axis for the element to be animated */
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  /* I give the animation name and I provide the name of the element */
+  animation-timeline: --image;
+  animation-name: show;
+
+  /* I expecify the range of the animation (when to start and to stop) */
+  animation-range: entry 25% cover 65%;
+  animation-fill-mode: both;
+}
