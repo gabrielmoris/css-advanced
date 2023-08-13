@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <!-- This script will allow the annimation with the svg -->
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
     <title>Curves Background</title>
   </head>
   <body>
@@ -79,17 +81,10 @@
     </section>
     <!-- created by https://app.haikei.app/ -->
     <div class="spacer layer1"></div>
-    <section>
-      <h1>Nice Curves</h1>
-      <p>
-        Doloribus reprehenderit iusto, earum nesciunt minima sequi similique
-        quas voluptate. Amet perferendis earum, quos velit aut magni, temporibus
-        veritatis voluptates et molestias cum non officiis inventore aspernatur
-        veniam dolorem reprehenderit.
-      </p>
-    </section>
 
-    <section>
+    <!-- created by https://app.haikei.app/ and reversed -->
+    <div class="spacer layer2 flip"></div>
+    <section class="pink">
       <h1>Nice Curves</h1>
       <p>
         Soluta, similique quidem? Eos accusamus nulla fuga sapiente
@@ -97,14 +92,46 @@
         deserunt. Cum maxime ipsum numquam adipisci voluptas voluptates vel at
         suscipit nulla quod!
       </p>
+      <svg
+        id="visual"
+        class="blob-motion"
+        viewBox="0 0 900 600"
+        width="900"
+        height="600"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <g transform="translate(406.63623431186096 329.7977018212571)">
+          <path
+            id="blob1"
+            d="M148.5 -140C198.5 -98.5 249.3 -49.3 242.3 -7C235.4 35.4 170.7 70.7 120.7 99.4C70.7 128 35.4 150 -2.9 153C-41.2 155.9 -82.5 139.8 -110.8 111.2C-139.2 82.5 -154.6 41.2 -156.1 -1.5C-157.6 -44.3 -145.3 -88.6 -117 -130.1C-88.6 -171.6 -44.3 -210.3 2.5 -212.8C49.3 -215.3 98.5 -181.5 148.5 -140"
+            fill="#930e43"
+          ></path>
+        </g>
+        <!-- This second gtoup is the path of another svg copied and pasted -->
+        <g
+          transform="translate(417.7247104720161 274.419401827425)"
+          style="visibility: hidden"
+        >
+          <path
+            id="blob2"
+            d="M178.3 -172.5C221.8 -134.8 241.4 -67.4 240.8 -0.6C240.2 66.2 219.5 132.5 176 182.5C132.5 232.5 66.2 266.2 -1.5 267.8C-69.3 269.3 -138.6 238.6 -163.6 188.6C-188.6 138.6 -169.3 69.3 -166.8 2.5C-164.4 -64.3 -178.7 -128.7 -153.7 -166.4C-128.7 -204 -64.3 -215 1.5 -216.5C67.4 -218.1 134.8 -210.2 178.3 -172.5"
+            fill="#930e43"
+          ></path>
+        </g>
+      </svg>
     </section>
-    <section>
-      <h1>Nice Curves</h1>
-      <p>
-        Quia harum, obcaecati a voluptates aspernatur alias velit vitae quam
-        repellat minus autem maxime iusto ullam, veniam distinctio fuga vel est
-        optio incidunt voluptatum perferendis tenetur at soluta. Fugiat, totam.
-      </p>
-    </section>
+    <div class="spacer layer2"></div>
+    <script>
+      const tween = KUTE.fromTo(
+        "#blob1",
+        { path: "#blob1" },
+        { path: "#blob2" },
+        { repeat: 999, duration: 3000, yoyo: true }
+      );
+
+      tween.start();
+    </script>
   </body>
 </html>
