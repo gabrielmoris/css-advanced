@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+}
+
+/* This wrapper behaves as thhe body, but It gives us an scroolling context  */
+.wrapper {
+  /* I give the wrapper the height of the screen and I make the content scroll in the wrapper instead of in the body */
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* How big is the z axis (with this I give a 3d effect to the wrapper)*/
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  /* This allows 3 dimensional annimations */
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.background {
+  /* It makes it 10 pixels away (I have the   perspective: 10px;) 
+   Making it 10 pixels away it looks smaller, that is why I make it to be double size with scale  
+   With this, it will scrol in a different speed  */
+  transform: translateZ(-10px) scale(2.1);
+}
+
+.foreground {
+  /* Ido the same as the background  */
+  transform: translateZ(-5px) scale(1.6);
+  cursor: pointer;
+}
+
+.title {
+  font-size: 7rem;
+  color: white;
+  text-shadow: 0 0 5px black;
+  text-decoration: none;
+  transform: translateZ(-7px) scale(1.6);
+}
+
+.title:hover {
+  color: rgb(240, 240, 240);
+}
+
+section {
+  font-size: 2rem;
+  padding: 5rem 10rem;
+  background-color: #333;
+  color: white;
+}
