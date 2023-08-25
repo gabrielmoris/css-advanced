@@ -8,6 +8,13 @@ body {
   overflow: hidden;
 }
 
+.links--title {
+  font-size: 4rem;
+  font-weight: bold;
+  position: absolute;
+  top: -25px;
+}
+
 .github-link-wrapper {
   position: absolute;
   display: flex;
@@ -24,6 +31,7 @@ body {
 
 .github--icn__txt {
   font-size: 0.8rem;
+  text-align: center;
 }
 
 @keyframes gradientBG {
@@ -40,6 +48,7 @@ body {
 
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -52,6 +61,9 @@ section {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 1rem;
+  overflow-y: auto;
+  text-align: center;
+  max-height: 70%;
 }
 
 .links-down h1 {
@@ -86,5 +98,21 @@ section {
   }
   75% {
     transform: translatey(-10px) scale(1.2) rotate(-5deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .github-link-wrapper {
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .github--icn {
+    width: 30px;
+  }
+
+  .github--icn__txt {
+    font-size: 0.6rem;
+    display: none;
   }
 }

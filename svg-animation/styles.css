@@ -18,8 +18,11 @@ body {
 
 a {
   position: absolute;
-  top: 20px;
   color: white;
+  text-decoration: none;
+  top: 25px;
+  left: 25px;
+  font-size: 2rem;
 }
 
 /* SVG ANNIMATION */
@@ -94,5 +97,11 @@ svg:hover #dark2 {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
   }
 }

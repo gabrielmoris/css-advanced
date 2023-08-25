@@ -16,9 +16,12 @@ body {
 }
 
 a {
-  position: absolute;
-  top: 20px;
   color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 25px;
+  left: 25px;
+  font-size: 2rem;
 }
 
 /* Animation from Here */
@@ -68,5 +71,12 @@ h2 {
       100% 100%,
       0% 100%
     );
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 5rem;
+    position: absolute;
   }
 }

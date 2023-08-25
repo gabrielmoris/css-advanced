@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 section {
@@ -16,9 +18,20 @@ h1 {
   margin: 2rem 0;
 }
 
+.home-link {
+  position: absolute;
+  text-decoration: none;
+  top: 25px;
+  left: 25px;
+  font-size: 2rem;
+}
+
 .text-container {
-  width: 500px;
+  max-width: 600px;
   padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .text-block {
@@ -51,4 +64,10 @@ img {
   /* I expecify the range of the animation (when to start and to stop) */
   animation-range: entry 25% cover 65%;
   animation-fill-mode: both;
+}
+
+@media only screen and (max-width: 600px) {
+  .text-container {
+    width: 90vw;
+  }
 }
