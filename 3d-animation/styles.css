@@ -39,19 +39,37 @@ img {
   rotate: x var(--rotation);
 }
 
+.yoda::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 15;
+  background: radial-gradient(circle, #000000, #00000050);
+  transition: opacity var(--timing);
+}
+
+.yoda:hover::before {
+  opacity: 1;
+  transition: opacity var(--timing);
+}
+
 /* This is more performant  */
 .yoda::after {
   content: "";
   position: absolute;
-  inset: 1.5rem;
-  translate: 0 60px;
+  inset: 80% 0.5rem 0.5rem;
+  translate: 0;
+  transform: translateZ(-100px);
   background: black;
   z-index: 1;
   filter: blur(1rem);
+  transition: rotate var(--timing) translate var(--timing);
 }
 
 .yoda:hover::after {
-  content: "";
+  rotate: x calc(var(--rotation) * -1);
+  translate: 0 60px;
 }
 
 .bg-img {
@@ -65,5 +83,34 @@ img {
 .logo,
 .front-img {
   position: absolute;
+}
+
+.logo {
+  z-index: 20;
+  filter: invert(1);
+  width: 65%;
+  margin-inline: auto;
+  inset: auto 0 2rem;
+  transform: translateY(0rem) translateZ(20px);
+  transition: var(--timing);
+}
+
+.yoda:hover .logo {
+  transform: translateZ(20px) translateY(-1rem);
+  rotate: x calc(var(--rotation) * -1);
+  filter: contrast(200%) invert(1) sepia(100%);
+}
+
+.front-img {
+  scale: 1.15;
+  transform-origin: bottom;
   opacity: 0;
+  z-index: 25;
+  transition: var(--timing);
+}
+
+.yoda:hover .front-img {
+  opacity: 1;
+  transform: translateZ(-10px) translateY(-2rem);
+  rotate: x calc(var(--rotation) * -1);
 }
