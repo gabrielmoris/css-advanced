@@ -1,0 +1,69 @@
+:root {
+  --timing: 400ms;
+  --rotation: 20deg;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  perspective: 1000px;
+}
+
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: calc(50%-31px);
+  color: #fff;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.yoda {
+  width: 300px;
+  aspect-ratio: 9/16;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: rotate var(--timing) ease;
+}
+
+.yoda:hover {
+  rotate: x var(--rotation);
+}
+
+/* This is more performant  */
+.yoda::after {
+  content: "";
+  position: absolute;
+  inset: 1.5rem;
+  translate: 0 60px;
+  background: black;
+  z-index: 1;
+  filter: blur(1rem);
+}
+
+.yoda:hover::after {
+  content: "";
+}
+
+.bg-img {
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  object-fit: cover;
+  object-position: -150px center;
+}
+
+.logo,
+.front-img {
+  position: absolute;
+  opacity: 0;
+}
