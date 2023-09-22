@@ -1,0 +1,25 @@
+body {
+  background: #ffffff;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  position: absolute;
+  text-decoration: none;
+  top: 25px;
+  left: 25px;
+  font-size: 2rem;
+}
+
+.paragraph {
+  font-family: "Brush Script MT";
+  font-weight: bold;
+  background-image: url("./noise.svg");
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

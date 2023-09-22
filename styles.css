@@ -8,6 +8,28 @@ body {
   overflow: hidden;
 }
 
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f100; /* Background color of the track */
+  border-radius: 6px; /* Rounded corners for the track */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners for the handle */
+}
+
+/* On hover, style the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
+}
+
 .links--title {
   font-size: 4rem;
   font-weight: bold;
@@ -61,9 +83,9 @@ section {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 1rem;
-  overflow-y: auto;
+  overflow-y: scroll;
   text-align: center;
-  max-height: 70%;
+  max-height: 500px;
 }
 
 .links-down h1 {
