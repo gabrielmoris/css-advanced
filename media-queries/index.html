@@ -20,18 +20,8 @@
       </div> -->
     </div>
     <script>
-      const generateRdmImg = () =>
-        `https://source.unsplash.com/random/500x600?${Math.floor(
-          Math.random() * 100
-        )}`;
+      const generateRdmImg = () => `https://source.unsplash.com/random/500x600?${Math.floor(Math.random() * 100)}`;
       const products = [
-        {
-          image: generateRdmImg(),
-          title: "Lorem Ipsum",
-          description:
-            "Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-          price: "22.05 €",
-        },
         {
           image: generateRdmImg(),
           title: "Sed ut perspiciatis",
@@ -63,15 +53,13 @@
         {
           image: generateRdmImg(),
           title: "Antiquitatum Thesaurum",
-          description:
-            "Discooperire secreta historiae cum artefactis antiquis ex toto orbe terrarum.",
+          description: "Discooperire secreta historiae cum artefactis antiquis ex toto orbe terrarum.",
           price: "25.00 €",
         },
         {
           image: generateRdmImg(),
           title: "Astrorum Mysteria",
-          description:
-            "Navigare per universum cum instrumentis astronomicis modernis.  Disce de stellis, planetis, et aliis miraculis caeli.",
+          description: "Navigare per universum cum instrumentis astronomicis modernis.  Disce de stellis, planetis, et aliis miraculis caeli.",
           price: "225.00 €",
         },
       ];
@@ -81,6 +69,7 @@
       products.forEach((product) => {
         const productCard = document.createElement("div");
         const image = document.createElement("img");
+        const textWrapper = document.createElement("div");
         const title = document.createElement("h3");
         const description = document.createElement("p");
         const price = document.createElement("span");
@@ -88,14 +77,15 @@
         productCard.className = "product-card";
         image.src = product.image;
 
+        textWrapper.className = "product-info";
         title.textContent = product.title;
         description.textContent = product.description;
         price.textContent = product.price;
         productCard.appendChild(image);
-        productCard.appendChild(title);
-        productCard.appendChild(description);
-        productCard.appendChild(price);
-
+        textWrapper.appendChild(title);
+        textWrapper.appendChild(description);
+        textWrapper.appendChild(price);
+        productCard.appendChild(textWrapper);
         productGrid.appendChild(productCard);
       });
     </script>
