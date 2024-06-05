@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Animated Login Form</title>
+  </head>
+  <body>
+    <nav class="home-link">
+      <a href="../" class="home-link">Home</a>
+    </nav>
+    <div class="product-grid">
+      <!-- Structure that will be shown -->
+      <!-- <div class="product-card">
+        <img />
+        <h3></h3>
+        <p></p>
+        <span></span>
+      </div> -->
+    </div>
+    <script>
+      const generateRdmImg = () =>
+        `https://source.unsplash.com/random/500x600?${Math.floor(
+          Math.random() * 100
+        )}`;
+      const products = [
+        {
+          image: generateRdmImg(),
+          title: "Lorem Ipsum",
+          description:
+            "Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+          price: "22.05 €",
+        },
+        {
+          image: generateRdmImg(),
+          title: "Sed ut perspiciatis",
+          description:
+            "Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+          price: "15.30 €",
+        },
+        {
+          image: generateRdmImg(),
+          title: "At vero eos et accusamus",
+          description:
+            "Et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+          price: "220.15 €",
+        },
+        {
+          image: generateRdmImg(),
+          title: "Et harum",
+          description:
+            "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
+          price: "25.00 €",
+        },
+        {
+          image: generateRdmImg(),
+          title: " Liber Florum",
+          description:
+            "Delectare oculis et animae cum varietate florum pulcherrimarum.  Hic invenies rosas rubras, lilia candida, violas odoratas, et multa alia miracula naturae.",
+          price: "5.00 €",
+        },
+        {
+          image: generateRdmImg(),
+          title: "Antiquitatum Thesaurum",
+          description:
+            "Discooperire secreta historiae cum artefactis antiquis ex toto orbe terrarum.",
+          price: "25.00 €",
+        },
+        {
+          image: generateRdmImg(),
+          title: "Astrorum Mysteria",
+          description:
+            "Navigare per universum cum instrumentis astronomicis modernis.  Disce de stellis, planetis, et aliis miraculis caeli.",
+          price: "225.00 €",
+        },
+      ];
+
+      const productGrid = document.getElementsByClassName("product-grid")[0];
+
+      products.forEach((product) => {
+        const productCard = document.createElement("div");
+        const image = document.createElement("img");
+        const title = document.createElement("h3");
+        const description = document.createElement("p");
+        const price = document.createElement("span");
+
+        productCard.className = "product-card";
+        image.src = product.image;
+
+        title.textContent = product.title;
+        description.textContent = product.description;
+        price.textContent = product.price;
+        productCard.appendChild(image);
+        productCard.appendChild(title);
+        productCard.appendChild(description);
+        productCard.appendChild(price);
+
+        productGrid.appendChild(productCard);
+      });
+    </script>
+  </body>
+</html>

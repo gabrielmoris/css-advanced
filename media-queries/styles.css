@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  color: white;
+}
+
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: calc(50%-31px);
+  color: #fff;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+/* Basic Styles */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 30rem);
+  grid-template-rows: repeat(2, 25rem);
+  object-fit: scale-down;
+}
+
+.product-card {
+  background-color: rgba(240, 248, 255, 0.2);
+  object-fit: scale-down;
+}
+
+.product-card img {
+  /* max-width: fit-content; */
+  /* max-height: 15rem; */
+}
+
+/* Media queries */
