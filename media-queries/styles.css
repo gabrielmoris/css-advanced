@@ -42,11 +42,11 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
+  border: #ffffff 2px solid;
 }
 
 .product-card img {
-  width: fit-content;
-  position: absolute;
+  object-fit: scale-down;
   border-radius: 1rem;
 }
 
