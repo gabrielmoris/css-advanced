@@ -11,16 +11,21 @@
       <a href="../" class="home-link">Home</a>
     </nav>
     <div class="product-grid">
-      <!-- Structure that will be shown -->
+      <!-- Structure generated via JS -->
       <!-- <div class="product-card">
         <img />
-        <h3></h3>
-        <p></p>
-        <span></span>
+        <div class="product-info">
+          <h3></h3>
+          <p></p>
+          <span></span>
+        </div>
       </div> -->
     </div>
     <script>
-      const generateRdmImg = () => `https://source.unsplash.com/random/500x600?${Math.floor(Math.random() * 100)}`;
+      const generateRdmImg = () =>
+        `https://source.unsplash.com/random/500x600?${Math.floor(
+          Math.random() * 100
+        )}`;
       const products = [
         {
           image: generateRdmImg(),
@@ -53,13 +58,15 @@
         {
           image: generateRdmImg(),
           title: "Antiquitatum Thesaurum",
-          description: "Discooperire secreta historiae cum artefactis antiquis ex toto orbe terrarum.",
+          description:
+            "Discooperire secreta historiae cum artefactis antiquis ex toto orbe terrarum.",
           price: "25.00 €",
         },
         {
           image: generateRdmImg(),
           title: "Astrorum Mysteria",
-          description: "Navigare per universum cum instrumentis astronomicis modernis.  Disce de stellis, planetis, et aliis miraculis caeli.",
+          description:
+            "Navigare per universum cum instrumentis astronomicis modernis.  Disce de stellis, planetis, et aliis miraculis caeli.",
           price: "225.00 €",
         },
       ];

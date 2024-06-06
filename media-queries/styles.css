@@ -8,46 +8,51 @@
   font-family: "Roboto Flex", sans-serif;
 }
 
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
 body {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   min-height: 100vh;
   background: #23242a;
   color: white;
 }
 
-.home-link {
-  position: absolute;
-  top: 20px;
-  left: calc(50%-31px);
-  color: #fff;
-  font-size: 1.5em;
-  width: 62px;
-}
-
 /* Basic Styles */
 
 .product-grid {
-  margin: 2rem;
-  margin-top: 10rem;
   display: grid;
-  grid-template-columns: repeat(3, 30rem);
-  grid-template-rows: repeat(2, 25rem);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .product-card {
   background-color: rgba(240, 248, 255, 0.2);
   border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   border: #ffffff 2px solid;
+  perspective: 1000px; /* Enables perspective for 3D transforms */
+  transition: all 0.5s ease; /* Smooth transition on hover */
 }
 
 .product-card img {
-  object-fit: scale-down;
-  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .product-info {
@@ -56,15 +61,64 @@ body {
   padding: 1rem 2rem;
   z-index: 100;
   background-color: #000000bd;
+  display: none;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info h3 {
+  margin-top: 0;
 }
 
 .product-info p {
-  margin: 2% 0;
-  text-align: justify;
+  margin-bottom: 0.5rem;
 }
 
 .product-info span {
-  font-size: larger;
+  font-weight: bold;
+}
+/* Media queries */
+
+/* Tablet  */
+@media screen and (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Media queries */
+/* Desktop  */
+@media screen and (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-card {
+    cursor: pointer;
+  }
+  .product-card:hover .product-info {
+    display: inherit;
+  }
+
+  .product-card:hover {
+    rotate: 1deg;
+  }
+}
+
+/* Mobile */
+
+/* Mobile Layout */
+@media screen and (max-width: 767px) {
+  .product-grid {
+    display: block;
+  }
+
+  .product-card {
+    margin-bottom: 1rem;
+  }
+
+  .product-card .product-info {
+    display: inherit;
+  }
+}
