@@ -52,21 +52,3 @@ Use developer tools in your browser to inspect the elements and styles as you wo
 Search online for resources on CSS pseudo-elements and transitions for further guidance.
 By completing this exercise, you'll gain a solid understanding of how pseudo-elements can be used to create interactive
 and visually appealing UI components without relying on additional HTML elements. */
-
-.progress-bar {
-  width: 50rem;
-  height: 3rem;
-  border-radius: 2rem;
-}
-
-.progress-bar::before {
-  height: 3rem;
-  width: 100%;
-  background-color: gray;
-}
-
-.progress-bar::after {
-  height: 3rem;
-  width: 60%;
-  background-color: green;
-}
