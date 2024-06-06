@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+}
+
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: calc(50%-31px);
+  color: #fff;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+/* Challenge:
+
+Before Progress: Using the ::before pseudo-element on the .progress-bar class, create a thin line 
+that represents the entire progress bar (100%). You can use a light grey color for this element.
+
+After Progress: Next, use the ::after pseudo-element on the .progress-bar class to create a colored section that
+ represents the actual progress (initially set to 0%). This element can be a brighter color.
+
+Dynamic Progress: Implement JavaScript code to update the width of the ::after pseudo-element based on a progress value
+ (between 0 and 100%). You can use a button or slider element to control the progress value.
+
+Understanding Pseudo-Elements in Action:
+
+As you complete this exercise, you'll gain a deeper understanding of how pseudo-elements work:
+
+::before and ::after: These pseudo-elements allow you to insert content before or after the content of an element, respectively.
+ In this case, you'll use them to create the visual components of the progress bar without adding extra HTML elements.
+Styling Pseudo-Elements: You can apply CSS styles like background-color, width, height, and more to customize the appearance
+ of the pseudo-elements.
+Dynamic Content: By controlling the width of the ::after element with JavaScript, you'll simulate the progress bar filling up.
+Bonus Challenge:
+
+Animate the progress bar filling using CSS transitions on the width property of the ::after pseudo-element.
+Tips:
+
+Start with basic styles for the progress bar container and the pseudo-elements.
+Use developer tools in your browser to inspect the elements and styles as you work.
+Search online for resources on CSS pseudo-elements and transitions for further guidance.
+By completing this exercise, you'll gain a solid understanding of how pseudo-elements can be used to create interactive
+and visually appealing UI components without relying on additional HTML elements. */
+
+.progress-bar {
+  width: 50rem;
+  height: 3rem;
+  border-radius: 2rem;
+}
+
+.progress-bar::before {
+  height: 3rem;
+  width: 100%;
+  background-color: gray;
+}
+
+.progress-bar::after {
+  height: 3rem;
+  width: 60%;
+  background-color: green;
+}
