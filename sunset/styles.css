@@ -1,0 +1,88 @@
+/* Topics:
+
+Linear Gradients: Creating smooth color transitions.
+Animations: Breathing life into your design with smooth movements. */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+body {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  color: white;
+}
+
+.celestial-body {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  background: linear-gradient(0.2turn, #3f87a600, #ebf8e179, #f69d3c);
+  animation: 4s linear 0s infinite alternate rotate;
+}
+
+.celestial-body::after {
+  content: "";
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0.2turn, #0a0c0952, #6a9c4431, #ca761d8e);
+  left: 0;
+  top: 0;
+  animation: 0.02s linear 0s infinite alternate athmosphere;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  30% {
+    transform: rotate(-30deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes athmosphere {
+  0% {
+    position: initial;
+  }
+  100% {
+    position: absolute;
+  }
+}
