@@ -52,3 +52,55 @@ Use developer tools in your browser to inspect the elements and styles as you wo
 Search online for resources on CSS pseudo-elements and transitions for further guidance.
 By completing this exercise, you'll gain a solid understanding of how pseudo-elements can be used to create interactive
 and visually appealing UI components without relying on additional HTML elements. */
+
+.progress-bar {
+  position: relative;
+  width: 30rem;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.progress-bar::before {
+  /* Styles for the before appears on the front */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #8f8f8f;
+  border-radius: 8px;
+}
+
+.progress-bar::after {
+  /* Styles for the after appears on the back */
+  content: "";
+  position: absolute; /* Overlap the "before" element */
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #80d480;
+  transition: width 0.5s ease;
+  border-radius: 8px;
+  animation: load 10s ease-in forwards;
+  animation-delay: -1s;
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+
+  60% {
+    width: 20%;
+  }
+
+  90% {
+    width: 22%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
