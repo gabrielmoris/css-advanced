@@ -57,6 +57,19 @@ body {
   animation: 0.02s linear 0s infinite alternate athmosphere;
 }
 
+/* .celestial-body::before {
+  content: "";
+  border-radius: 10%;
+  width: 1000%;
+  height: 10%;
+  background: white;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
+} */
+
 @keyframes rotate {
   0% {
     transform: rotate(-10deg);
