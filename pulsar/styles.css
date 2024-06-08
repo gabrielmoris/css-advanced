@@ -36,39 +36,43 @@ body {
   min-height: 100vh;
   background: #23242a;
   color: white;
+  overflow: hidden;
 }
 
 .celestial-body {
   width: 10rem;
   height: 10rem;
   border-radius: 100%;
-  background: linear-gradient(0.2turn, #3f87a600, #ebf8e179, #f69d3c);
+  background: linear-gradient(0.2turn, #ebf8e1, #ebf8e1, #3ceaf6);
   animation: 4s linear 0s infinite alternate rotate;
+  z-index: 10;
 }
 
-.celestial-body::after {
+.celestial-body::before {
   content: "";
   border-radius: 100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0.2turn, #0a0c0952, #6a9c4431, #ca761d8e);
+  background: linear-gradient(0.2turn, #ebf8e1, #446a9c, #1d93ca);
   left: 0;
   top: 0;
-  animation: 0.02s linear 0s infinite alternate athmosphere;
+  animation: 0.002s linear 0s infinite alternate athmosphere;
+  z-index: -10;
 }
 
-/* .celestial-body::before {
+.celestial-body::after {
   content: "";
   border-radius: 10%;
-  width: 1000%;
-  height: 10%;
+  width: 200vw;
+  height: 35%;
+  opacity: 5%;
   background: white;
-  position: absolute;
-  top: 50%;
-  bottom: 50%;
-  left: 50%;
-  right: 50%;
-} */
+  position: fixed;
+  bottom: 30%;
+  right: -94vw;
+  rotate: -18deg;
+  z-index: -10;
+}
 
 @keyframes rotate {
   0% {
