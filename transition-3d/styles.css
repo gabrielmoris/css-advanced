@@ -1,0 +1,52 @@
+/* 
+For this challenge, we'll create an interactive card that transforms and adds depth on hover, utilizing transitions and 3D transforms.
+
+Techniques Covered:
+* Transitions: We'll leverage transitions to create smooth animations when hovering over the card.
+* 3D Transforms: We'll employ the transform property with 3D functions to create a depth effect for the card on hover.
+* Box Shadow (Optional): You can incorporate a box-shadow to further enhance the depth illusion.
+
+Exercise Explanation:
+- Card Design: Style the .card element to create a visually appealing card with a background color, borders, and potentially rounded corners.
+- Transitions: Define transitions for properties like transform and box-shadow (if used) to create smooth animations when hovering over the card.
+- 3D Transform on Hover: On hover, utilize the transform property with 3D functions like rotateY or translateZ to create a subtle rotation or depth
+effect for the card.
+- Content Readability: Ensure the <h2> and <p> elements within the card remain readable against the card's background color. You might adjust font 
+color, size, or margins as needed.
+- Optional - Box Shadow: Experiment with adding a subtle box-shadow to the card in its default state to further emphasize the depth 
+effect on hover.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  color: white;
+}
