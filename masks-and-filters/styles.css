@@ -1,0 +1,63 @@
+/* 
+This time, we'll explore the creative potential of CSS masks and filters to create a distorted image effect.
+
+Techniques Covered:
+Mask Images: We'll utilize the mask-image property to apply a custom image as a mask over another image, creating a distorted or revealed effect.
+Filters: We'll experiment with CSS filters like blur, hue-rotate, and grayscale to further enhance the distorted image aesthetic.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  color: white;
+}
+
+/* Challenge */
+
+img {
+  border: 3px white solid;
+  border-radius: 8px;
+  filter: hue-rotate(-30deg);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  background-image: url("https://picsum.photos/seed/111111/600/600");
+  width: 600px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mask-image: url(vector.svg);
+  opacity: 70%;
+  filter: blur(8px);
+}
