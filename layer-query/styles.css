@@ -1,0 +1,117 @@
+/* 
+CSS Layer Queries are a relatively new feature (introduced in March 2022) that allows you to define a layer hierarchy and then apply styles based on that hierarchy. It provides a more organized and flexible way to structure your styles compared to traditional methods.
+
+Here's a breakdown of CSS Layer Queries:
+- Layers: You define named layers using the @layer rule. 
+These layers represent a stacking order, similar to how physical layers are stacked on top of each other.
+- Style Application: Styles are then associated with specific layers using curly braces {} after the layer name. 
+You can target elements within these layers using standard CSS selectors.
+*/
+
+/* Challenge */
+/* To define these layers I use the @layer rule: The oder of the layers determine the hierarchy. 
+Latest has higher.*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+
+/* Layers */
+@layer base, background, content, ui;
+
+/* Base styles (apply to all layers) */
+@layer base {
+  body {
+    min-height: 100vh;
+    font-size: 16px;
+    background-image: url("../parallax/imgs/Mountain.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Flex", sans-serif;
+  }
+}
+
+/* Background layer */
+@layer background {
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("path/to/background-image.jpg"); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Place behind other elements */
+  }
+}
+
+/* Content layer */
+@layer content {
+  .content-wrapper {
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 700px; /* Limit width on larger screens */
+    margin: 0 auto;
+    padding: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .content-wrapper {
+      margin-top: 5rem;
+      flex-direction: column; /* Stack elements on small screens */
+    }
+  }
+}
+
+/* UI layer */
+@layer ui {
+  .button {
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+    background-color: #23242a;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .button {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+
+  .button:hover {
+    background-color: #1a1b1e;
+  }
+}
