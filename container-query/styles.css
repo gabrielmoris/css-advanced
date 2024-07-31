@@ -6,7 +6,6 @@ This provides more granular control over responsiveness and can lead to cleaner 
 Exercise Explanation:
 
 */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
 
 /* General styles */
@@ -41,37 +40,22 @@ body {
   color: white;
 }
 
-/* Challenge */
-
-@container .card-container (min-width: 500px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-    border: 1px white solid;
-    padding: 20px;
-    border-radius: 8px;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    max-width: 20rem;
-  }
-
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-
-  p,
-  h2 {
-    width: fit-content;
-  }
+/* Add containment to the container element */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  container-type: inline-size;
+  width: 80vw;
+  container-name: card-container;
 }
-@container .card-container (max-width: 499px) {
+
+/* Container queries */
+@container card-container (max-width: 499px) {
   .card {
     display: flex;
     flex-direction: column;
-    border: 1px white solid;
+    border: 2px blue solid;
     padding: 20px;
     border-radius: 8px;
     gap: 20px;
@@ -79,15 +63,44 @@ body {
     align-items: center;
     max-width: 10rem;
   }
+}
 
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+@container card-container (min-width: 500px) and (max-width: 799px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px yellow solid;
+    padding: 20px;
+    border-radius: 8px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 20rem;
   }
+}
 
-  p,
-  h2 {
-    width: fit-content;
+@container card-container (min-width: 800px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px white solid;
+    padding: 40px;
+    border-radius: 8px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 50rem;
   }
+}
+
+/* Common styles for all card sizes */
+.card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card p,
+.card h2 {
+  width: fit-content;
 }
