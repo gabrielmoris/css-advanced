@@ -1,0 +1,68 @@
+/* 
+Create a simple layout that adapts to different screen sizes and orientations using dynamic viewport units (dvh, dvw)
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  background: #23242a;
+  color: white;
+}
+
+.container {
+  min-height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff20;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 10dvw;
+  text-align: justify;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff20;
+  justify-content: space-around;
+  padding: 1rem;
+}
