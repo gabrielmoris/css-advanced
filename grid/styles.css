@@ -1,0 +1,118 @@
+/* 
+Create a masonry
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.164);
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  color: #000080;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  top: 0;
+  padding: 1rem 2rem;
+}
+
+main {
+  background-color: cadetblue;
+  padding: 2rem;
+  /* min-height: 100vh; */
+}
+
+.grid-parent {
+  display: grid;
+  /* 1fr will take 1 fraction of relative column. I can asign 2fr or 3fr to play with the fractions */
+  /* grid-template-columns: repeat(4, 100px); */
+  /* If I want to fit the grid items with the current width I can use */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  height: 70vh;
+  gap: 4px;
+  /* As Flex I can position the grid from its parent container */
+  /* justify-content: center; */
+
+  /* I also can position the contents in the grid, with place Items I can address align and justify */
+  /* justify-items: center;
+  align-items: center; */
+  /* place-items: center; */
+
+  /* Same with the whole content of the grid */
+  /* place-content: center; */
+}
+
+.grid-parent > * {
+  background-color: white;
+  /* height: 50px;
+  width: 80px; */
+}
+
+span {
+  /* I can position the element independently in the grid  being the first number the first grid and the second number the number of the grid after it finishes*/
+  /* grid-column: 1 /3; */
+
+  /* I could also say how big is the span of the element */
+  /* grid-column: span 3;
+  grid-row: span 3; */
+  /* place-items: center; */
+
+  /* grid-area: srow / scol / erow /ecol; */
+  /* grid-area: 1 / 1 / 3 / 4; */
+  grid-area: span1;
+}
+
+/* I also can overlay it under another element */
+
+/* span + * {
+  opacity: 0.5;
+  grid-area: 1 / 1 / 3 / 3;
+} */
+
+/* I can also name them to asign visually to the grid */
+
+.grid-parent {
+  grid-template-areas:
+    "span1 span1 span1 ."
+    "div1 div1 . div2"
+    ". div3 div3 div2"
+    "div4 div4 div4 div4";
+}
+
+.child-1 {
+  opacity: 0.5;
+  grid-area: div1;
+}
+.child-2 {
+  opacity: 0.5;
+  grid-area: div2;
+}
+.child-3 {
+  opacity: 0.5;
+  grid-area: div3;
+}
+.child-4 {
+  opacity: 0.5;
+  grid-area: div4;
+}
