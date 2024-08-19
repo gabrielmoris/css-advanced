@@ -1,0 +1,93 @@
+/* 
+Create a togler*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+:root {
+  --main-color: rgb(220, 224, 218);
+  --bg-color: rgb(240, 239, 239);
+  --fonts-color: rgba(20, 20, 20, 0.678);
+  --switch-off-color: rgb(228, 146, 146);
+  --switch-on-color: rgb(147, 180, 131);
+  --switch-off-bgcolor: rgba(228, 146, 146, 0.24);
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-link a {
+  color: var(--fonts-color);
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  top: 0;
+  padding: 1rem 2rem;
+}
+
+main {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 89vh;
+}
+
+.toggle-wrapper {
+  width: 100vw;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  cursor: pointer;
+  border: 3px solid var(--switch-off-color);
+  width: 8rem;
+  padding: 0.2rem;
+  border-radius: 2rem;
+  background-color: var(--switch-off-bgcolor);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: background-color 2s ease, border 2s ease;
+}
+
+.toggle-input:checked + label {
+  border-color: var(--switch-on-color);
+  background-color: var(--main-color);
+}
+
+.toggle-switch {
+  border-radius: 100%;
+  background-color: var(--switch-off-color);
+  height: 3rem;
+  width: 3rem;
+  transition: transform 0.5s ease, background-color 2s ease;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-input:checked + label .toggle-switch {
+  background-color: var(--switch-on-color);
+  transform: translateX(calc(8rem - 3.8rem));
+}
