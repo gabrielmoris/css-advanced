@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  padding: 5rem;
+  background-color: rgb(249, 253, 253);
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.home-link a {
+  color: #000080;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr:has(td.status-done) {
+  background-color: #d4edda;
+}
+
+tr:has(td.status-cancelled) {
+  background-color: #edd4d4;
+}
+
+tr:has(td.status-pending) {
+  background-color: #d7d4ed;
+}
+
+tr:has(td .priority-low) {
+  border: 2px solid #e3e3e4;
+}
+
+tr:has(td .priority-normal) {
+  border: 2px solid #acb4e0;
+}
+
+tr:has(td .priority-high) {
+  border: 2px solid #0000f3;
+}
+
+tr:has(td.status-done):has(td .priority-low) {
+  opacity: 0.1;
+}
+
+tr:has(td.status-pending):has(td .priority-high) {
+  font-weight: bolder;
+}
