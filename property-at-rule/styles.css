@@ -1,0 +1,71 @@
+/* General styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.home-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.home-link a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 62px;
+}
+/* If I do a variable:  
+:root {
+  --pink: hotpink;
+}
+The browser interprets it as a string 
+.style {
+  color: var(--pink);
+} 
+In this way It wouldn't be possible to use the value as an animation.
+
+*/
+
+@property --main-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3498db;
+}
+
+body {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p::before {
+  content: "@property --main-color {\A    syntax: '<color>';\A    inherits: false;\A    initial-value: #3498db;\A}";
+  white-space: pre; /* Preserves line breaks */
+  font-family: monospace;
+}
+
+/* Change the content on hover */
+body:hover p::after {
+  content: "body:hover {\A     --main-color: #053352;\A }";
+  white-space: pre; /* Preserves line breaks */
+  font-family: monospace;
+}
+
+body:hover p::before {
+  display: none;
+}
+
+body:hover {
+  --main-color: #053352;
+}
