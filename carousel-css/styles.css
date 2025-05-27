@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+img{
+    width:10rem;
+    height:10rem;
+    border-radius: 5%;
+}
+
+.carousel-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    position: relative; /* For positioning buttons/markers relative to the carousel */
+}
+
+.carousel {
+    display: flex; /* Arrange items horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to each item horizontally */
+    scroll-behavior: smooth; /* Smooth scrolling when snapped or using buttons */
+    list-style: none; /* Remove list bullets */
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+
+    /* Crucial for anchoring buttons and markers */
+    anchor-name: --carousel-anchor;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Each item takes full width of the container */
+    width: 100%; /* Ensure it takes full width */
+    flex-direction:row;
+    scroll-snap-align: center; /* Snap the center of the item to the scrollport center */
+    padding: 2rem;
+    box-sizing: border-box; /* Include padding in width */
+    border-radius: 6px;
+    background-color: #e9e9e9;
+    min-height: 200px; /* Just for visual demonstration */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+    padding: 1rem 5rem;
+}
+
+/* ::scroll-button() for Navigation Arrows */
+.carousel::scroll-button(inline-start),
+.carousel::scroll-button(inline-end) {
+    content: ""; /* This is required to make them appear */
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    /* Use anchor positioning to place them relative to the carousel */
+    position-anchor: --carousel-anchor;
+}
+
+.carousel::scroll-button(inline-start) {
+    left: -2rem;
+}
+
+.carousel::scroll-button(inline-end) {
+    right: -2rem;
+}
+
+/* Customizing arrow content */
+.carousel::scroll-button(inline-start) {
+    content: "<";
+}
+
+.carousel::scroll-button(inline-end) {
+    content: ">";
+}
+
+/* Styling for disabled buttons (when at start/end of scroll) */
+.carousel::scroll-button(*):disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ::scroll-marker() for Pagination Dots */
+.carousel {
+    /* This property tells the browser to generate the marker group */
+    scroll-marker-group: after; /* Places the markers after the scroll container in flow */
+}
+
+.carousel::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.carousel-item::scroll-marker {
+    content: ""; /* Required for marker to appear */
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    border: 1px solid #999;
+}
+
+/* Style the active marker */
+.carousel-item::scroll-marker:target-current {
+    background-color: #333; /* Darker dot for current slide */
+    border-color: #333;
+}
+
+/* Optional: Hide scrollbar in Webkit browsers for a cleaner look */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Optional: Hide scrollbar in IE/Edge */
+.carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
