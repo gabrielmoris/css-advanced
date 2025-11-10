@@ -1,0 +1,55 @@
+@import url('../variables.css');
+
+body {
+  margin: 0;
+  font-family: var(--main-font), sans-serif;
+  color: white;
+  background: #202731;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.home-link {
+  color:  var(--secondary-color);
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+button{
+  background-color: var(--primary-color);
+  padding: .7em 1.5em;
+  border-radius: 5px;
+   border: none;
+   color: white;
+   font-size: 1.2em;
+   cursor: pointer;
+   margin-top: 1em;
+   margin-left: 1em;
+}
+
+#menu-popover{
+  width: max-content;
+  border: 1px solid var(--gray-dark);
+  border-radius: 5px;
+  padding: 1em;
+  margin:auto;
+  inset:0;
+}
+
+#menu-popover a{
+  text-decoration: none;
+  padding: .7em 1.5em;
+  border-radius: .25em;
+  color: var(--gray-dark);
+}
+
+#menu-popover a:hover{
+  background-color: var(--gray-dark);
+  color: white;
+}
