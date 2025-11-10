@@ -6,11 +6,24 @@
       <option name="myIgnoreVendorSpecificProperties" value="false" />
       <option name="myCustomPropertiesList">
         <value>
-          <list size="1">
+          <list size="3">
             <item index="0" class="java.lang.String" itemvalue="anchor-name" />
+            <item index="1" class="java.lang.String" itemvalue="position-anchor" />
+            <item index="2" class="java.lang.String" itemvalue="position-try-fallbacks" />
           </list>
         </value>
       </option>
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="popover" />
+            <item index="1" class="java.lang.String" itemvalue="popovertarget" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
   </profile>
 </component>
